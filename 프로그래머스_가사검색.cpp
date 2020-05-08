@@ -7,7 +7,7 @@
 using namespace std;
 
 /*
-	https://programmers.co.kr/learn/courses/30/lessons/60058
+	https://programmers.co.kr/learn/courses/30/lessons/60060
 	2020 Kakao Blind Recruitment	
 */
 
