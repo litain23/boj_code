@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <cstring>
 using namespace std;
 
 int abs(int x) {return x < 0 ? -x : x;}
@@ -36,9 +37,16 @@ int main() {
 	int tc; cin >> tc;
 	while(tc--) {
 		int n, m; scanf("%d %d", &n, &m);
+		for(int i=0;i<=100000;i++) {
+			v[i].clear();
+		}
+		hasAns = true;
+		memset(p, 0, sizeof(p));
+		memset(h, 0, sizeof(h));
 		for(int i=1;i<=n;i++) {
 			scanf("%d", &p[i]);
 		}
+
 		for(int i=1;i<=n;i++) {
 			scanf("%d", &h[i]);
 		}
@@ -46,6 +54,10 @@ int main() {
 			int s, e;
 			scanf("%d %d", &s, &e);
 			v[s].push_back(e);
+		}
+		if(h[1] < -m || h[1] > m) {
+			cout << "NO\n";
+			continue;
 		}
 
 		int x = f(1);
